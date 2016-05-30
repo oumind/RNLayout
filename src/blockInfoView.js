@@ -19,6 +19,7 @@ import {
 } from 'react-native';
 
 import pxToDp from './components/pxToDp';
+import UjlText from './styles/UjlText';
 
 export default class BlockInfoView extends Component {
   render() {
@@ -27,8 +28,8 @@ export default class BlockInfoView extends Component {
         <View style={[styles.cell,{borderRadius: 2}]}>
           <Image style={{position: 'absolute', bottom: -1, right: -1, width: 32, height: 32, resizeMode: 'stretch'}} source={require('./img/house-icon.png')} />
           <View style={styles.blockInfo}>
-            <Text style={{color:"#ffffff", fontSize:20, fontWeight: 'bold'}}>
-              1501
+            <Text style={[UjlText.number, {color:"#ffffff", fontSize:20, fontWeight: 'bold'}]}>
+              1591
             </Text>
             <Text style={{color:"#ffffff"}}>
               门牌
@@ -39,7 +40,7 @@ export default class BlockInfoView extends Component {
         <View style={[styles.cellfixed, { width: pxToDp(270), borderRadius: 2}]}>
           <Image style={{position: 'absolute', bottom: 3, right: 3, width: 14, height: 16, resizeMode: 'stretch'}} source={require('./img/P.png')} />
           <View style={styles.parkInfo}>
-            <Text style={{color:"#ffffff", fontSize:20, fontWeight: 'bold'}}>
+            <Text style={[UjlText.number, {color:"#ffffff", fontSize:20, fontWeight: 'bold'}]}>
               1035
             </Text>
             <Text style={{color:"#ffffff"}}>

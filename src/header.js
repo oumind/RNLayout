@@ -28,6 +28,7 @@ export default class Header extends Component {
 var styles = StyleSheet.create({
   container: {
     flex: 1,
+    height: 80,
     justifyContent: 'center',
     backgroundColor: '#F7F7F7',
   }
