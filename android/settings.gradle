@@ -1,0 +1,3 @@
+rootProject.name = 'ujlPappHome'
+
+include ':app'
