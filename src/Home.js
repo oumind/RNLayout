@@ -11,6 +11,7 @@ import React, {
 } from 'react';
 import {
   StyleSheet,
+  ScrollView,
   Text,
   TouchableHighlight,
   Image,
@@ -20,6 +21,9 @@ import {
 import Header from './header';
 import BlockInfoView from './blockInfoView';
 import UjlListView from './UjlListView';
+import {UjlText, UjlColor} from './styles/style';
+import {UjlLayout} from './styles/layout';
+import {UjlImage} from './styles/image';
 
 export default class Home extends Component {
   /**
@@ -60,49 +64,47 @@ export default class Home extends Component {
       <TouchableHighlight underlayColor='#c8c7cc'>
         <View style={styles.rowBg}>
           <View style={styles.row}>
-            <View style={styles.flexContainer, styles.rowHeader}>
-              <Text style={styles.title}>
+            <View style={[UjlLayout.flexContainer, UjlLayout.mbsm]}>
+              <Text style={[UjlLayout.flex, UjlLayout.textLeft, UjlText.tips]}>
                 {rowData}
               </Text>
-              <Text style={styles.time}>
+              <Text style={[UjlLayout.flex, UjlLayout.textRight, UjlText.tips]}>
                 刚刚
               </Text>
             </View>
-            <View style={styles.flexContainer}>
-              <View style={styles.flexBlock}>
-                <Text style={styles.content}>
+            <View style={UjlLayout.flexContainer}>
+              <View style={[UjlLayout.flex, UjlLayout.mrsm]}>
+                <Text style={UjlText.content}>
                     {LOREM_IPSUM.substr(0, rowHash % 301 + 10)}
                   </Text>
               </View>
-              <Image style={styles.thumbnail} source={imgSource} />
+              <Image style={UjlImage.md} source={imgSource} />
             </View>
           </View>
         </View>
       </TouchableHighlight>
-      
+
     );
   }
-  
-  blockInfoView() {
-    return (
-      <View style={{padding: 15, backgroundColor: '#F7F7F7'}}>
-        <BlockInfoView />
-      </View>
-    );
-  }
-  
+
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={UjlLayout.appBg}>
+      <View style={UjlLayout.flexMiddle}>
         <Header />
+        <View style={[UjlLayout.m]}>
+          <BlockInfoView />
+        </View>
         <UjlListView
+          style={{backgroundColor: 'white'}}
           rowView={this._newStateRowView}
           onFetch={this._onFetch}
-          headerView={this.blockInfoView}
           firstLoader={true}
+          enableScroll={false}
           emptyListTip={'没有内容'}
           />
       </View>
+      </ScrollView>
     );
   }
 }
@@ -123,51 +125,9 @@ function hashCode(str) {
 };
 
 var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#ffffff',
-  },
   navBar: {
     height: 64,
     backgroundColor: '#CCC'
-  },
-  card: {
-
-  },
-  flexContainer: {
-    flexDirection: 'row'
-  },
-  flexBlock: {
-    flex: 1
-  },
-  ListViewHeader: {
-    paddingTop: 35,
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingBottom: 10,
-  },
-  rowHeader: {
-    marginBottom: 3,
-    flexDirection: 'row'
-  },
-  title: {
-    fontSize: 12,
-    flex: 1,
-    color: '#888D85'
-  },
-  time: {
-    fontSize: 12,
-    flex: 1,
-    textAlign: 'right',
-    color: '#888D85'
-  },
-  content: {
-    color: '#333'
-  },
-  thumbnail: {
-    width: 64,
-    height: 64,
   },
   row: {
     paddingTop: 10,

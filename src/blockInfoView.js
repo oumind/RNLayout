@@ -10,79 +10,80 @@ import React, {
   Component
 } from 'react';
 import {
-  StyleSheet,
-  Dimensions,
   Text,
   TouchableHighlight,
+  StyleSheet,
   Image,
   View
 } from 'react-native';
 
-import pxToDp from './components/pxToDp';
-import UjlText from './styles/UjlText';
+import Normalize from './components/Normalize';
+import {UjlText, UjlColor} from './styles/style';
+import {UjlLayout} from './styles/layout';
+import {UjlImage} from './styles/image';
+import UjlIconSet from './styles/iconset';
 
 export default class BlockInfoView extends Component {
   render() {
     return (
-      <View style={styles.flexContainer}>
-        <View style={[styles.cell,{borderRadius: 2}]}>
-          <Image style={{position: 'absolute', bottom: -1, right: -1, width: 32, height: 32, resizeMode: 'stretch'}} source={require('./img/house-icon.png')} />
-          <View style={styles.blockInfo}>
-            <Text style={[UjlText.number, {color:"#ffffff", fontSize:20, fontWeight: 'bold'}]}>
+      <View style={[UjlLayout.flexContainer, {height: 70}]}>
+        <View style={[UjlColor.secondaryBg, UjlLayout.flexCC, UjlLayout.mr,
+          {borderRadius: 2}]}>
+          <View style={[UjlLayout.flexCC]}>
+            <Text style={[UjlText.number, UjlText.lg, {color:"white", fontWeight: 'bold'}]}>
               1591
             </Text>
-            <Text style={{color:"#ffffff"}}>
+            <Text style={[UjlText.sm, {color: "white"}]}>
               门牌
             </Text>
           </View>
-          <Text style={{position: 'absolute', bottom: 5, left: 7, opacity: 0.8, color:"#ffffff"}}>共20栋</Text>
+          <Text style={[UjlText.numberLight, UjlText.xs, styles.buildingCnt]}>
+            <UjlIconSet iconset='fa' name='building-o'
+              style={UjlText.sm} />
+            {' '+20}
+          </Text>
+          <Image style={[UjlImage.sm, UjlImage.stretch, styles.houseIcon]}
+            source={require('./img/house-icon.png')} />
         </View>
-        <View style={[styles.cellfixed, { width: pxToDp(270), borderRadius: 2}]}>
-          <Image style={{position: 'absolute', bottom: 3, right: 3, width: 14, height: 16, resizeMode: 'stretch'}} source={require('./img/P.png')} />
-          <View style={styles.parkInfo}>
-            <Text style={[UjlText.number, {color:"#ffffff", fontSize:20, fontWeight: 'bold'}]}>
+        <View style={[UjlColor.infoBg,
+            {width: Normalize(300), borderRadius: 2}]}>
+          <View style={UjlLayout.flexCC}>
+            <Text style={[UjlText.number, UjlText.lg,
+                {color:"white", fontWeight: 'bold'}]}>
               1035
             </Text>
-            <Text style={{color:"#ffffff"}}>
+            <Text style={[UjlText.sm, {color:"white"}]}>
               车位
             </Text>
           </View>
+          <Image style={[UjlImage.stretch, styles.parkIcon]}
+            source={require('./img/P.png')} />
         </View>
       </View>
     );
   }
 }
 
-var styles = StyleSheet.create({
-  flexContainer: {
-    // 容器需要添加direction才能变成让子元素flex
-    flexDirection: 'row',
+const styles = StyleSheet.create({
+  buildingCnt: {
+    position: 'absolute',
+    bottom: Normalize(8),
+    left: Normalize(9),
+    opacity: 0.7,
+    color:"white"
   },
-  cell: {
-    flex: 1,
-    height: 70,
-    backgroundColor: '#F98A27',
-    marginRight: 15,
+  houseIcon: {
+    position: 'absolute',
+    bottom: 0,
+    right: -1,
+    width: Normalize(50),
+    height: Normalize(50)
   },
-  blockInfo: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10
-  },
-  cellfixed: {
-    height: 70,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#038CD6',
-  },
-  parkInfo: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  parkIcon: {
+    position: 'absolute',
+    bottom: Normalize(8),
+    right: Normalize(9),
+    width: Normalize(26),
+    height: Normalize(30)
+  }
 });
