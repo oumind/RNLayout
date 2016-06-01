@@ -18,6 +18,7 @@ export const BASE_COLORS = {
   'APPBG':          '#F7F7F7',
   'PRIMARY':        '#6DB82D',
   'PRIMARYDARK':    '#509516',
+  'PRIMARYDARKER':  '#376610',
   'SECONDARY':      '#F98A27',
   'SECONDARYDARK':  '#CF6B11',
   'INFO':           '#038CD6',

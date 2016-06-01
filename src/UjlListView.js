@@ -205,8 +205,6 @@ class UjlListView extends Component {
    * 刷新列表
    */
   _onRefresh(options = {}, isFetching=false) {
-    //options ＝ {external: true}
-    console.log(this._getRows);
     this.setState({
       isRefreshing: true
     });
@@ -226,7 +224,7 @@ class UjlListView extends Component {
     if ((this.state.paginationStatus === 'fetching' && this.props.pagination === true)
       || (this.state.paginationStatus === 'firstLoad' && this.props.firstLoader === true)) {
       return (
-        <View>
+        <View style={{paddingTop: 50, height: 300}}>
           <UjlSpinner />
         </View>
       );
@@ -278,7 +276,7 @@ class UjlListView extends Component {
 
         {...this.props}
 
-        style={this.props.style}
+        style={[{backgroundColor: this.state.paginationStatus!=='firstLoad' ? 'white':'transparent'}, this.props.style]}
         />
     );
   }

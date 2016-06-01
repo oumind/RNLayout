@@ -64,6 +64,9 @@ export const UjlColor = StyleSheet.create({
   appBg: {
     color: BASE_COLORS.APPBG
   },
+  transBg: {
+    backgroundColor: 'transparent'
+  },
   primaryBg: {
     backgroundColor: BASE_COLORS.PRIMARY
   },

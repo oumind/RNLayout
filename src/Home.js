@@ -1,6 +1,6 @@
 /**
  * Copyright 2016 UVO PLUS TECH CO., LTD.
- * The setup of pApp.
+ * The Home of pApp.
  * @flow
  */
 
@@ -20,6 +20,7 @@ import {
 
 import Header from './header';
 import BlockInfoView from './blockInfoView';
+import BlockBtnView from './blockBtnView';
 import UjlListView from './UjlListView';
 import {UjlText, UjlColor} from './styles/style';
 import {UjlLayout} from './styles/layout';
@@ -95,14 +96,17 @@ export default class Home extends Component {
         <View style={[UjlLayout.m]}>
           <BlockInfoView />
         </View>
-        <UjlListView
-          style={{backgroundColor: 'white'}}
-          rowView={this._newStateRowView}
-          onFetch={this._onFetch}
-          firstLoader={true}
-          enableScroll={false}
-          emptyListTip={'没有内容'}
-          />
+
+        <View style={[UjlLayout.ml, UjlLayout.mr, UjlLayout.mb]}>
+          <UjlListView
+            style={{borderRadius: 2}}
+            rowView={this._newStateRowView}
+            onFetch={this._onFetch}
+            firstLoader={true}
+            enableScroll={false}
+            emptyListTip={'没有内容'}
+            />
+        </View>
       </View>
       </ScrollView>
     );

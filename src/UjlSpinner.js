@@ -17,14 +17,16 @@ class UjlSpinner extends Component {
       return (
         <ProgressBarAndroid
           styleAttr="SmallInverse"
+          color="#6db82d"
           {...this.props}
           />
       );
     } else {
       return (
         <ActivityIndicatorIOS
-          animating={true}
           size="small"
+          color="#6db82d"
+          animating={true}
           {...this.props}
           />
       );
