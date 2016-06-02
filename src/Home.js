@@ -21,6 +21,7 @@ import {
 import Header from './header';
 import BlockInfoView from './blockInfoView';
 import BlockBtnView from './blockBtnView';
+import BlockInputView from './blockInputView';
 import UjlListView from './UjlListView';
 import {UjlText, UjlColor} from './styles/style';
 import {UjlLayout} from './styles/layout';
@@ -42,11 +43,6 @@ export default class Home extends Component {
         '***干了什么 ' + ((page - 1) * 10 + 3),
         '***干了什么 ' + ((page - 1) * 10 + 4),
         '***干了什么 ' + ((page - 1) * 10 + 5),
-        '***干了什么 ' + ((page - 1) * 10 + 6),
-        '***干了什么 ' + ((page - 1) * 10 + 7),
-        '***干了什么 ' + ((page - 1) * 10 + 8),
-        '***干了什么 ' + ((page - 1) * 10 + 9),
-        '***干了什么 ' + ((page - 1) * 10 + 10)
       ];
       if (page === 10) {
         callback(rows, {
@@ -96,7 +92,6 @@ export default class Home extends Component {
         <View style={[UjlLayout.m]}>
           <BlockInfoView />
         </View>
-
         <View style={[UjlLayout.ml, UjlLayout.mr, UjlLayout.mb]}>
           <UjlListView
             style={{borderRadius: 2}}
@@ -106,6 +101,12 @@ export default class Home extends Component {
             enableScroll={false}
             emptyListTip={'没有内容'}
             />
+        </View>
+        <View style={[UjlLayout.m]}>
+          <BlockInputView />
+        </View>
+        <View style={[UjlLayout.m]}>
+          <BlockBtnView />
         </View>
       </View>
       </ScrollView>

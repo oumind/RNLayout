@@ -15,7 +15,7 @@ export default class blockBtnView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      anim: new Animated.Value(0),
+      anim: new Animated.Value(0)
     };
   }
   componentDidMount() {
