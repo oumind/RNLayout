@@ -22,7 +22,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import {BASE_COLORS} from '../styles/variable';
 import {UjlText, UjlColor} from '../styles/style';
-import Normalize from './Normalize';
+import normalize from './normalize';
 
 export default class UjlButton extends Component {
   static propTypes = {
@@ -115,10 +115,10 @@ export default class UjlButton extends Component {
   }
 }
 
-const BORDER_RADIUS = Normalize(5);
-var BTN_HEIGHT = Normalize(100);
-var BTN_HEIGHT_SM = Normalize(80);
-var BTN_HEIGHT_XS = Normalize(50);
+const BORDER_RADIUS = normalize(5);
+var BTN_HEIGHT = normalize(100);
+var BTN_HEIGHT_SM = normalize(80);
+var BTN_HEIGHT_XS = normalize(50);
 var styles = StyleSheet.create({
   btnBase: {
     height: BTN_HEIGHT

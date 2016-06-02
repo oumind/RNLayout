@@ -1,4 +1,9 @@
-'use strict';
+/**
+ * Copyright 2016 UVO PLUS TECH CO., LTD.
+ * The Styled InputText defination of App.
+ * Created by @Xiaobo
+ */
+
 import React, {Component, PropTypes} from "react";
 import {View, TextInput, Animated, StyleSheet} from "react-native";
 

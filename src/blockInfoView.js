@@ -17,7 +17,7 @@ import {
   View
 } from 'react-native';
 
-import Normalize from './components/Normalize';
+import normalize from './components/normalize';
 import {UjlText, UjlColor} from './styles/style';
 import {UjlLayout} from './styles/layout';
 import {UjlImage} from './styles/image';
@@ -46,7 +46,7 @@ export default class BlockInfoView extends Component {
             source={require('./img/house-icon.png')} />
         </View>
         <View style={[UjlColor.infoBg,
-            {width: Normalize(300), borderRadius: 2}]}>
+            {width: normalize(300), borderRadius: 2}]}>
           <View style={UjlLayout.flexCC}>
             <Text style={[UjlText.number, UjlText.lg,
                 {color:"white", fontWeight: 'bold'}]}>
@@ -67,8 +67,8 @@ export default class BlockInfoView extends Component {
 const styles = StyleSheet.create({
   buildingCnt: {
     position: 'absolute',
-    bottom: Normalize(8),
-    left: Normalize(9),
+    bottom: normalize(8),
+    left: normalize(9),
     opacity: 0.7,
     color:"white"
   },
@@ -76,14 +76,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     right: -1,
-    width: Normalize(50),
-    height: Normalize(50)
+    width: normalize(50),
+    height: normalize(50)
   },
   parkIcon: {
     position: 'absolute',
-    bottom: Normalize(8),
-    right: Normalize(9),
-    width: Normalize(26),
-    height: Normalize(30)
+    bottom: normalize(8),
+    right: normalize(9),
+    width: normalize(26),
+    height: normalize(30)
   }
 });

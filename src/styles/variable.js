@@ -11,7 +11,7 @@ import {
   PixelRatio,
 } from 'react-native';
 
-import Normalize from '../components/Normalize'
+import normalize from '../components/normalize'
 
 // ---------------- COLORS --------------------------
 export const BASE_COLORS = {
@@ -59,7 +59,7 @@ export const FONT_FAMILY = [
 ];
 
 // ---------------- FONT SIZE --------------------------
-var FONT_BASE_SIZE   = Normalize(30);
+var FONT_BASE_SIZE   = normalize(30);
 /**
  * 来自React Native的定义
  * PixelRatio.get() === 1
@@ -93,7 +93,7 @@ export const FONT_SIZE = {
 };
 
 // ------------- LAYOUT DIV INT ---------------
-var DIV_BASE_INT   = Normalize(20);
+var DIV_BASE_INT   = normalize(20);
 /**
  * 来自React Native的定义
  * http://facebook.github.io/react-native/releases/0.26/docs/pixelratio.html
@@ -113,7 +113,7 @@ var DIV_BASE_INT   = Normalize(20);
  * Nexus 6
  */
 // if (PixelRatio.get() < 2) {
-//   DIV_BASE_INT = Normalize(16);
+//   DIV_BASE_INT = normalize(16);
 // }
 
 

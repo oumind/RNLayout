@@ -8,8 +8,8 @@ const uiWidthPx = 750;
  * @param uiElementPx
  * 设计稿中元素的宽度
  */
-function Normalize(uiElementPx) {
+function normalize(uiElementPx) {
   return Math.round(uiElementPx *  deviceWidthDp / uiWidthPx);
 }
 
-export default Normalize;
+export default normalize;

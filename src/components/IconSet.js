@@ -4,8 +4,6 @@
  * Created by @Xiaobo
  */
 
-'use strict'
-
 import React, {
   Component, PropTypes
 } from 'react';
