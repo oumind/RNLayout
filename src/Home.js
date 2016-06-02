@@ -90,6 +90,9 @@ export default class Home extends Component {
       <View style={UjlLayout.flexMiddle}>
         <Header />
         <View style={[UjlLayout.m]}>
+          <BlockBtnView />
+        </View>
+        <View style={[UjlLayout.m]}>
           <BlockInfoView />
         </View>
         <View style={[UjlLayout.ml, UjlLayout.mr, UjlLayout.mb]}>
@@ -104,9 +107,6 @@ export default class Home extends Component {
         </View>
         <View style={[UjlLayout.m]}>
           <BlockInputView />
-        </View>
-        <View style={[UjlLayout.m]}>
-          <BlockBtnView />
         </View>
       </View>
       </ScrollView>

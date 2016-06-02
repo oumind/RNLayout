@@ -2,7 +2,7 @@
 'use strict';
 
 import React, {
-  Component
+  Component, PropTypes
 } from 'react';
 import {
   View,
@@ -11,13 +11,18 @@ import {
   Platform
 } from 'react-native';
 
-class UjlSpinner extends Component {
-  _getSpinner() {
+class Spinner extends Component {
+  // static propTypes = {
+  //   spinnerSize: PropTypes.string,
+  // };
+  // static defaultProps = {
+  //   spinnerSize: 'big' | 'small',
+  // };
+  getSpinner() {
     if (Platform.OS === 'android') {
       return (
         <ProgressBarAndroid
           styleAttr="SmallInverse"
-          color="#6db82d"
           {...this.props}
           />
       );
@@ -25,7 +30,6 @@ class UjlSpinner extends Component {
       return (
         <ActivityIndicatorIOS
           size="small"
-          color="#6db82d"
           animating={true}
           {...this.props}
           />
@@ -36,10 +40,10 @@ class UjlSpinner extends Component {
   render() {
     return (
       <View>
-        {this._getSpinner() }
+        {this.getSpinner() }
       </View>
     );
   }
 };
 
-export default UjlSpinner;
+export default Spinner;

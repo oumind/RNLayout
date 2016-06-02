@@ -19,7 +19,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import UjlSpinner from './UjlSpinner';
+import Spinner from './components/Spinner';
 
 class UjlListView extends Component {
   static propTypes = {
@@ -225,7 +225,7 @@ class UjlListView extends Component {
       || (this.state.paginationStatus === 'firstLoad' && this.props.firstLoader === true)) {
       return (
         <View style={{paddingTop: 50, height: 300}}>
-          <UjlSpinner />
+          <Spinner color="#6db82d" />
         </View>
       );
     } else if (this.state.paginationStatus === 'waiting' && this.props.pagination === true && (this.props.withSections === true || this._getRows().length > 0)) {

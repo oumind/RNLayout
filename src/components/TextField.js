@@ -244,10 +244,10 @@ class FloatingLabel extends Component {
         }}
         >
         {(() => {
-          if (this.props.iconName) {
+          if (this.props.iconName !== 'undefined' &&  this.props.iconName !== '') {
             let AnimatedIcon = Animated.createAnimatedComponent(IconSet)
             return <AnimatedIcon iconset={this.props.iconSet} 
-                            name={this.props.iconName} 
+                            name={this.props.iconName}
                             style={{fontSize: this.state.fontSize,}} />;
           }
          })()}

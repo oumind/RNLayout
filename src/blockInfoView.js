@@ -39,8 +39,8 @@ export default class BlockInfoView extends Component {
           </View>
           <Text style={[UjlText.numberLight, UjlText.xs, styles.buildingCnt]}>
             <IconSet iconset='fa' name='building-o'
-              style={[UjlText.sm]} />
-            {' '+20}
+              style={[UjlText.sm, {letterSpacing: normalize(5)}]} />
+            {20}
           </Text>
           <Image style={[UjlImage.sm, UjlImage.stretch, styles.houseIcon]}
             source={require('./img/house-icon.png')} />

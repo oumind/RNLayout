@@ -13,6 +13,7 @@ import {
 import UjlButton from './components/UjlButton';
 import Button from './components/Button';
 import {UjlLayout} from './styles/layout';
+import IconSet from './components/IconSet';
 
 export default class blockBtnView extends Component {
   constructor(props) {
@@ -44,17 +45,36 @@ export default class blockBtnView extends Component {
   render() {
     return (
       <View style={UjlLayout.m}>
-        <UjlButton type="primary" style={UjlLayout.mb} size='xs' />
-        <UjlButton type="secondary" style={UjlLayout.mb} size='sm'/>
-        <UjlButton type="danger" style={UjlLayout.mb}/>
         <Animated.View style={[this.fadeIn(700, 20)]}>
-          <UjlButton type="bordered" style={UjlLayout.mb}/>
+          <Button 
+            type='primary' caption='可用按钮'
+            iconName='building-o' style={UjlLayout.mb} />
         </Animated.View>
-
+        
         <View style={UjlLayout.m}>
-          <Button style={{backgroundColor: 'red'}} textStyle={{fontSize: 18}}>
-            Hello!
-          </Button>
+          <Button 
+            type='danger' caption='可用按钮'
+            iconName='building-o' style={UjlLayout.mb} />
+          <Button 
+            type='primary' caption='禁用按钮'
+            isDisabled={true}
+            iconName='building-o' style={UjlLayout.mb} />
+          <Button 
+            type='secondary' caption='加载中...'
+            isLoading={true}
+            iconName='building-o' style={UjlLayout.mb} />
+          <Button 
+            isLoading={true}
+            type='bordered' caption='线框加载中...'
+            iconName='building-o' style={UjlLayout.mb} />
+          <Button 
+            type='bordered' caption='点我'
+            iconName='building-o' style={UjlLayout.mb} />
+          <Button 
+            type='bordered' caption='线框禁用'
+            isDisabled={true}
+            iconName='building-o'
+            style={UjlLayout.mb} />
         </View>
       </View>
     );
