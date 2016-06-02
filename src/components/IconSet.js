@@ -7,7 +7,7 @@
 'use strict'
 
 import React, {
-  Component,
+  Component, PropTypes
 } from 'react';
 
 import {
@@ -18,16 +18,15 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-class UjlIconSet extends Component {
+class IconSet extends Component {
   static propTypes = {
-    type: React.PropTypes.number,
-    name: React.PropTypes.string,
-    size: React.PropTypes.number,
+    iconset: PropTypes.string,
+    name: PropTypes.string,
+    size: PropTypes.number,
   };
   static defaultProps = {
     iconset: 'fa',
     name: 'font-awesome',
-    size: 20,
   };
 
   render() {
@@ -40,7 +39,7 @@ class UjlIconSet extends Component {
           <FontAwesome
             name={this.props.name}
             size={this.props.size}
-
+            
             {...this.props}
              />
         );
@@ -60,4 +59,4 @@ class UjlIconSet extends Component {
   };
 }
 
-export default UjlIconSet;
+export default IconSet;

@@ -59,7 +59,7 @@ export const FONT_FAMILY = [
 ];
 
 // ---------------- FONT SIZE --------------------------
-var FONT_BASE_SIZE   = 18;
+var FONT_BASE_SIZE   = Normalize(30);
 /**
  * 来自React Native的定义
  * PixelRatio.get() === 1
@@ -77,9 +77,9 @@ var FONT_BASE_SIZE   = 18;
  * PixelRatio.get() === 3.5
  * Nexus 6
  */
-if (PixelRatio.get() <= 2) {
-  FONT_BASE_SIZE = 14;
-}
+// if (PixelRatio.get() <= 2) {
+//   FONT_BASE_SIZE = 14;
+// }
 
 export const FONT_SIZE = {
   'BASE': FONT_BASE_SIZE,
@@ -112,9 +112,9 @@ var DIV_BASE_INT   = Normalize(20);
  * PixelRatio.get() === 3.5
  * Nexus 6
  */
-if (PixelRatio.get() < 2) {
-  DIV_BASE_INT = Normalize(16);
-}
+// if (PixelRatio.get() < 2) {
+//   DIV_BASE_INT = Normalize(16);
+// }
 
 
 export const DIV_INT = {

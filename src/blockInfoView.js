@@ -21,7 +21,7 @@ import Normalize from './components/Normalize';
 import {UjlText, UjlColor} from './styles/style';
 import {UjlLayout} from './styles/layout';
 import {UjlImage} from './styles/image';
-import UjlIconSet from './styles/iconset';
+import IconSet from './components/IconSet';
 
 export default class BlockInfoView extends Component {
   render() {
@@ -38,8 +38,8 @@ export default class BlockInfoView extends Component {
             </Text>
           </View>
           <Text style={[UjlText.numberLight, UjlText.xs, styles.buildingCnt]}>
-            <UjlIconSet iconset='fa' name='building-o'
-              style={UjlText.sm} />
+            <IconSet iconset='fa' name='building-o'
+              style={[UjlText.sm]} />
             {' '+20}
           </Text>
           <Image style={[UjlImage.sm, UjlImage.stretch, styles.houseIcon]}
